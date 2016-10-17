@@ -1,0 +1,27 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: navbar-notifications-development
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+
+test: &test
+  adapter: postgresql
+  encoding: utf8
+  database: navbar-notifications-test
+  pool: 5
+  username: chryus
+  password:
+  host: localhost
+
+
+cucumber:
+  <<: *test
