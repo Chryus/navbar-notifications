@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     end
   end
   devise_scope :user do
-    # authenticated :user do
-    #   root 'home#index', as: :authenticated_root
-    # end
+    authenticated :user do
+      root 'forum_threads#index', as: :authenticated_root
+    end
     unauthenticated do
       root to: 'devise/sessions#new'
     end
