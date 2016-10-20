@@ -1,7 +1,7 @@
-json.array! @notifcations do |notifcation|
-  json.id notifcation.id
-  json.unread !notifcation.read_at?
-  json.template render partial "notifications/#{notification.notifiable_type.underscore.pluralize}/#{notification.action}", locals: {notification: notification}, formats: [:html]
+json.array! @notifications do |notification|
+  json.id notification.id
+  json.unread !notification.read_at?
+  json.template render partial: "notifications/#{notification.notifiable_type.underscore.pluralize}/#{notification.action}", locals: {notification: notification}, formats: [:html]
 
   json.recipient notification.recipient
   json.actor notification.actor.username

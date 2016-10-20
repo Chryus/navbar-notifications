@@ -3,7 +3,7 @@
 <h1><%=@forum_thread.title %></h1>
 
 <% @forum_thread.forum_posts.includes(:user).each do |forum_post| %>
-  <div>
+  <div id="forum_post_<%=forum_post.id%>">
     <p><%= forum_post.user.username %> posted:</p>
     <%= simple_format forum_post.body %>
   </div>
